@@ -27,14 +27,14 @@ export function PeopleItem(): JSX.Element {
       ) : (
         <>
           <PageHeader>
-            <h1>{data?.data?.name}</h1>
+            <h1>{data?.name}</h1>
             <ButtonReverseLink to="/people">Back</ButtonReverseLink>
           </PageHeader>
           <PageContent>
-            <p>Gender: {data?.data?.gender}</p>
-            <p>Mass: {data?.data?.mass}</p>
-            <p>Height: {data?.data?.height}</p>
-            <p>Birth year: {data?.data?.birth_year}</p>
+            <p>Gender: {data?.gender}</p>
+            <p>Mass: {data?.mass}</p>
+            <p>Height: {data?.height}</p>
+            <p>Birth year: {data?.birth_year}</p>
           </PageContent>
         </>
       )}

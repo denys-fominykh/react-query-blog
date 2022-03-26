@@ -23,7 +23,7 @@ export function People(): JSX.Element {
         ) : error ? (
           <h1>An error has occurred: ${error}</h1>
         ) : (
-          data?.data?.results.map(({ name, birth_year: birthYear }, idx) => (
+          data?.results.map(({ name, birth_year: birthYear }, idx) => (
             <Link key={idx} to={`/people/${idx + 1}`}>
               <li>
                 <h3>{name}</h3>

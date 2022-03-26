@@ -1,6 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
-
-import { AxiosResponseSuccess } from 'api/types';
+import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 
 function createHttpClient() {
   return axios.create({
@@ -15,8 +13,12 @@ export const httpClient = createHttpClient();
 
 export async function makeHttpRequest<SuccessPayload>(
   config: AxiosRequestConfig,
-): AxiosResponseSuccess<SuccessPayload> {
+): Promise<SuccessPayload> {
   const { headers } = config;
+  const response: AxiosResponse<SuccessPayload> = await httpClient.request<SuccessPayload>({
+    ...config,
+    headers,
+  });
 
-  return httpClient.request<SuccessPayload>({ ...config, headers });
+  return response.data;
 }
