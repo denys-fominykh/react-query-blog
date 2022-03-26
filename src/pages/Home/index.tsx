@@ -1,31 +1,11 @@
-import logo from 'assets/images/svg/logo.svg';
-import {
-  HomeContainer,
-  HomeLogoContainer,
-  HomeHeader,
-  HomeCode,
-  HomeLink,
-  HomeLogo,
-} from 'pages/Home/styled';
-
-export function Home() {
+export function Home(): JSX.Element {
   return (
-    <HomeContainer>
-      <HomeHeader>
-        <HomeLogoContainer>
-          <HomeLogo src={logo} alt="logo" />
-        </HomeLogoContainer>
-        <p>
-          Edit <HomeCode>src/App.tsx</HomeCode> and save to reload.
-        </p>
-        <HomeLink
-          href="https://react-query.tanstack.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Query
-        </HomeLink>
-      </HomeHeader>
-    </HomeContainer>
+    <div>
+      <h1>Welcome!</h1>
+      <p>
+        React Query is configurable down to each observer instance of a query with knobs and options
+        to fit every use-case. This is a simple blog app to demonstrate the power of React Query.
+      </p>
+    </div>
   );
 }
