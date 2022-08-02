@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 
 import { API_HANDLERS } from 'api/apiHandlers';
@@ -12,7 +12,7 @@ type PeopleParams = {
 
 export function PeopleItem(): JSX.Element {
   const { itemId } = useParams<PeopleParams>();
-  const { isLoading, error, data } = useQuery(QUERY_KEYS.PEOPLE.CHARACTER_BY_ID, () => {
+  const { isLoading, error, data } = useQuery([QUERY_KEYS.PEOPLE.CHARACTER_BY_ID], () => {
     if (itemId) {
       return API_HANDLERS.PEOPLE.CHARACTER_BY_ID(itemId);
     }

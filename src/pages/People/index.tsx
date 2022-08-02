@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 
 import { API_HANDLERS } from 'api/apiHandlers';
@@ -8,7 +8,7 @@ import { ItemsList, PageHeader } from 'pages/People/styled';
 
 export function People(): JSX.Element {
   const { isLoading, error, data } = useQuery(
-    QUERY_KEYS.PEOPLE.ALL_CHARACTERS,
+    [QUERY_KEYS.PEOPLE.ALL_CHARACTERS],
     API_HANDLERS.PEOPLE.ALL_CHARACTERS,
   );
 
