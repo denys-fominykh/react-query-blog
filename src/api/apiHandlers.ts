@@ -1,6 +1,6 @@
 import { API_PATHS } from 'api/apiPaths';
 import { getData } from 'api/crudHandlers';
-import { GetPeopleResponseSuccess, GetCharacterResponseSuccess } from 'api/types';
+import { GetPeopleResponseSuccess, GetCharacterResponseSuccess } from 'types/people';
 
 export const API_HANDLERS = {
   PEOPLE: {
